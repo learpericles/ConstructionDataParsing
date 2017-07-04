@@ -15,7 +15,6 @@ class ConstructionSpyder(CrawlSpider):
         for data in d:
             url = DOMAIN + data["url"]
             links.append(url)
-            print url
 
     start_urls = links
 
@@ -34,4 +33,4 @@ class ConstructionSpyder(CrawlSpider):
                 if (i == 1):
                     item["value"] = data.strip()
 
-            print item
+            yield item
